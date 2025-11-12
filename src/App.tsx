@@ -26,8 +26,7 @@ export default function App() {
       const lista: Registro[] = [];
       snapshot.forEach((doc) => lista.push({ id: doc.id, ...doc.data() } as Registro));
       setTodosRegistros(lista);
-      // mostra todos inicialmente
-
+  
     };
     carregarRegistros();
   }, []);
@@ -40,7 +39,6 @@ export default function App() {
       setResultados(todosRegistros); // mostra todos se não digitou nada
       return;
     }
-
     // Filtra localmente usando includes()
     const filtrados = todosRegistros.filter((r) =>
       r.palavraChave.toLowerCase().includes(texto)
@@ -63,9 +61,8 @@ export default function App() {
         <button className="md:w-1/4 w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 cursor-pointer">Consultar</button>
       </form>
 
-      <div className="bg-gray-400 p-6 rounded-2xl shadow-lg w-full max-w-5xl">
+      <div className="bg-gray-400 p-6 md:rounded-2xl md:shadow-lg w-full max-w-5xl">
         <h2 className="text-lg font-bold mb-4">Resultados</h2>
-
         {/* Mobile: stacked cards */}
         <div className="space-y-4 md:hidden">
           {resultados.length > 0 ? (
@@ -100,10 +97,9 @@ export default function App() {
             <div className="text-center p-4 text-gray-500">Nenhum registro encontrado</div>
           )}
         </div>
-
         {/* Desktop/tablet: show table on md+ */}
         <div className="hidden md:block overflow-x-auto">
-          <table className="w-full border-collapse border border-gray-300 text-sm">
+          <table className="w-full border-collapse border rounded-4xl border-gray-300 text-sm">
             <thead>
               <tr className="bg-gray-200">
                 <th className="border border-gray-300 p-2">Servidor</th>
@@ -115,7 +111,7 @@ export default function App() {
             </thead>
             <tbody>
               {resultados.map((r) => (
-                <tr key={r.id} className="hover:bg-gray-100">
+                <tr key={r.id} className="hover:bg-gray-600">
                   <td className="border border-gray-300 p-2">{r.servidor}</td>
                   <td className="border border-gray-300 p-2">{r.pasta}</td>
                   <td className="border border-gray-300 p-2">{r.palavraChave}</td>
@@ -137,4 +133,3 @@ export default function App() {
     </div>
   );
 }
-
