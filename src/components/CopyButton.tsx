@@ -24,7 +24,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({ textToCopy, label = "Copiar" })
       onClick={handleCopy}
       className={`flex items-center gap-2 px-4 py-2 rounded-2xl font-medium 
         transition-all duration-200 cursor-pointer
-        ${copied ? "bg-green-500 text-white" : "bg-gray-200 hover:bg-gray-300 text-gray-800"}`}
+        ${copied ? "bg-green-600 text-white" : "bg-neutral-700 hover:bg-neutral-600 text-neutral-100"}`}
     >
       {copied ? <Check size={10} /> : <Copy size={10} />}
       {copied ? "Copiado!" : label}

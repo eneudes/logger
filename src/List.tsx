@@ -30,73 +30,111 @@ export default function List() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-full bg-gray-400">
+    <div className="flex flex-col items-center justify-center min-h-full bg-neutral-950">
       <Navbar />
 
-      {/* Registros: mobile cards + table for md+ */}
-      <div className="bg-gray-400 p-6 rounded-2xl shadow-lg w-full max-w-5xl mt-10">
-        <h2 className="text-lg font-bold mb-4">Registros Salvos</h2>
+      {/* Registros: desktop table */}
+      <div className="bg-neutral-900 p-6  shadow-lg w-full border border-neutral-800 mt-10">
+        <h2 className="text-lg font-bold mb-4 text-neutral-100">
+          Registros Salvos
+        </h2>
 
         {/* Mobile: stacked cards */}
         <div className="space-y-2 md:hidden">
           {registros.length > 0 ? (
             registros.map((r) => (
-              <div key={r.id} className=" rounded-lg p-4 shadow-lg bg-gray-500">
+              <div
+                key={r.id}
+                className="rounded-lg p-4 shadow-lg bg-neutral-800 border border-neutral-700"
+              >
                 <div className="flex justify-between items-start">
                   <div>
-                    <div className="text-sm text-gray-200">Servidor</div>
-                    <div className="font-medium">{r.servidor}</div>
+                    <div className="text-sm text-neutral-400">Servidor</div>
+                    <div className="font-medium text-neutral-100">
+                      {r.servidor}
+                    </div>
                   </div>
                   <div className="ml-4">
                     <CopyButton textToCopy={r.caminho} />
                   </div>
                 </div>
-                <div className="mt-3 grid grid-cols-1 gap-2 text-sm text-gray-700">
+                <div className="mt-3 grid grid-cols-1 gap-2 text-sm text-neutral-300">
                   <div>
-                    <div className="text-gray-200">Pasta</div>
-                    <div className="break-words text-gray-900">{r.pasta}</div>
+                    <div className="text-neutral-400">Pasta</div>
+                    <div className="break-words text-neutral-200">
+                      {r.pasta}
+                    </div>
                   </div>
                   <div>
-                    <div className="text-gray-200">Palavra Chave</div>
-                    <div className="break-words text-gray-900">{r.palavraChave}</div>
+                    <div className="text-neutral-400">Palavra Chave</div>
+                    <div className="break-words text-neutral-200">
+                      {r.palavraChave}
+                    </div>
                   </div>
                   <div>
-                    <div className="text-gray-200">Caminho</div>
-                    <div className="break-words text-gray-900">{r.caminho}</div>
+                    <div className="text-neutral-400">Caminho</div>
+                    <div className="break-words text-neutral-200">
+                      {r.caminho}
+                    </div>
                   </div>
                 </div>
               </div>
             ))
           ) : (
-            <div className="text-center p-4 text-gray-500">Carregando Registros do banco...</div>
+            <div className="text-center p-4 text-neutral-400">
+              Carregando Registros do banco...
+            </div>
           )}
         </div>
 
         {/* Desktop/tablet: show table on md+ */}
         <div className="hidden md:block overflow-x-auto">
-          <table className="w-full border-collapse border border-gray-300 text-sm">
+          <table className="w-full border-collapse border border-neutral-800 text-sm">
             <thead>
-              <tr className="bg-gray-200">
-                <th className="border border-gray-300 p-2">Servidor</th>
-                <th className="border border-gray-300 p-2">Pasta</th>
-                <th className="border border-gray-300 p-2">Palavra Chave</th>
-                <th className="border border-gray-300 p-2">Caminho</th>
-                <th className="border border-gray-300 p-2">Ação</th>
+              <tr className="bg-neutral-800">
+                <th className="border border-neutral-800 p-2 text-neutral-100">
+                  Servidor
+                </th>
+                <th className="border border-neutral-800 p-2 text-neutral-100">
+                  Pasta
+                </th>
+                <th className="border border-neutral-800 p-2 text-neutral-100">
+                  Palavra Chave
+                </th>
+                <th className="border border-neutral-800 p-2 text-neutral-100">
+                  Caminho
+                </th>
+                <th className="border border-neutral-800 p-2 text-neutral-100">
+                  Ação
+                </th>
               </tr>
             </thead>
             <tbody>
               {registros.map((r) => (
-                <tr key={r.id} className="hover:bg-gray-100">
-                  <td className="border border-gray-300 p-2">{r.servidor}</td>
-                  <td className="border border-gray-300 p-2">{r.pasta}</td>
-                  <td className="border border-gray-300 p-2">{r.palavraChave}</td>
-                  <td className="border border-gray-300 p-2 break-words">{r.caminho}</td>
-                  <td className="border border-gray-300 p-2"><CopyButton textToCopy={r.caminho} /></td>
+                <tr
+                  key={r.id}
+                  className="hover:bg-neutral-700 transition-colors"
+                >
+                  <td className="border border-neutral-800 p-2 text-neutral-200">
+                    {r.servidor}
+                  </td>
+                  <td className="border border-neutral-800 p-2 text-neutral-200">
+                    {r.pasta}
+                  </td>
+                  <td className="border border-neutral-800 p-2 text-neutral-200">
+                    {r.palavraChave}
+                  </td>
+                  <td className="border border-neutral-800 p-2 break-words text-neutral-200">
+                    {r.caminho}
+                  </td>
+                  <td className="border border-neutral-800 p-2">
+                    <CopyButton textToCopy={r.caminho} />
+                  </td>
                 </tr>
               ))}
               {registros.length === 0 && (
                 <tr>
-                  <td colSpan={5} className="text-center p-4 text-gray-500">
+                  <td colSpan={5} className="text-center p-4 text-neutral-400">
                     Carregando Registros do banco...
                   </td>
                 </tr>

@@ -37,14 +37,14 @@ export default function Create() {
   };
 
   return (
-    <div className={`flex flex-col items-center justify-center min-h-full bg-gray-400`}>
+    <div className={`flex flex-col items-center justify-center min-h-full bg-neutral-950`}>
       <Navbar />
-      <div className="flex items-center justify-center bg-gray-400 mt-8">
+      <div className="flex items-center  justify-center bg-neutral-950 mt-8">
         <form
           onSubmit={handleSubmit}
-          className="bg-gray-400 p-6 rounded-2xl shadow-md w-full max-w-md space-y-4"
+          className="bg-neutral-900 p-6 md:rounded-2xl shadow-md w-full space-y-4 border border-neutral-800"
         >
-          <h1 className="text-2xl font-bold">Cadastro de Pasta</h1>
+          <h1 className="text-2xl font-bold text-neutral-100">Cadastro de Pasta</h1>
 
           <input
             type="text"
@@ -52,7 +52,7 @@ export default function Create() {
             placeholder="Nome do Servidor"
             value={form.servidor}
             onChange={handleChange}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-3 border rounded-lg bg-neutral-800 border-neutral-700 text-neutral-100 placeholder-neutral-500 focus:outline-none focus:border-neutral-600 focus:ring-2 focus:ring-neutral-600 focus:ring-opacity-50 transition-all duration-200 shadow-sm"
             required
           />
 
@@ -62,7 +62,7 @@ export default function Create() {
             placeholder="Nome da Pasta"
             value={form.pasta}
             onChange={handleChange}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-3 border rounded-lg bg-neutral-800 border-neutral-700 text-neutral-100 placeholder-neutral-500 focus:outline-none focus:border-neutral-600 focus:ring-2 focus:ring-neutral-600 focus:ring-opacity-50 transition-all duration-200 shadow-sm"
             required
           />
 
@@ -71,7 +71,7 @@ export default function Create() {
             placeholder="Palavras-chave"
             value={form.palavraChave}
             onChange={handleChange}
-            className="w-full p-2 border rounded-lg h-24"
+            className="w-full p-3 border rounded-lg h-24 bg-neutral-800 border-neutral-700 text-neutral-100 placeholder-neutral-500 focus:outline-none focus:border-neutral-600 focus:ring-2 focus:ring-neutral-600 focus:ring-opacity-50 transition-all duration-200 shadow-sm resize-none"
             required
           />
 
@@ -81,13 +81,13 @@ export default function Create() {
             placeholder="Caminho da Pasta"
             value={form.caminho}
             onChange={handleChange}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-3 border rounded-lg bg-neutral-800 border-neutral-700 text-neutral-100 placeholder-neutral-500 focus:outline-none focus:border-neutral-600 focus:ring-2 focus:ring-neutral-600 focus:ring-opacity-50 transition-all duration-200 shadow-sm"
             required
           />
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition"
+            className="w-full bg-neutral-700 text-neutral-100 p-3 rounded-lg hover:bg-neutral-600 active:bg-neutral-500 transition-all duration-200 font-medium shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-neutral-600 focus:ring-opacity-50"
           >
             Salvar
           </button>

@@ -1,1 +1,36 @@
 @import "tailwindcss";
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+input,
+textarea,
+select {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+table {
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
