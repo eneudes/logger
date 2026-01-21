@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import imgLoger from "../assets/logger.svg";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function Navbar() {
       <div className="max-w-5xl mx-auto flex items-center justify-between">
         <div className="text-xl font-bold text-neutral-100">
           <img
-            src="../../public/logger.svg"
+            src={imgLoger}  
             alt="Logo"
             className="w-8 h-8 mr-2 inline-block"
           />

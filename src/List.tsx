@@ -32,8 +32,6 @@ export default function List() {
   return (
     <div className="flex flex-col items-center justify-center min-h-full bg-neutral-950">
       <Navbar />
-
-      {/* Registros: desktop table */}
       <div className="bg-neutral-900 p-6  shadow-lg w-full border border-neutral-800 mt-10">
         <h2 className="text-lg font-bold mb-4 text-neutral-100">
           Registros Salvos
@@ -127,7 +125,7 @@ export default function List() {
                   <td className="border border-neutral-800 p-2 break-words text-neutral-200">
                     {r.caminho}
                   </td>
-                  <td className="border border-neutral-800 p-2">
+                  <td className="border border-neutral-800 p-2 flex justify-center items-center">
                     <CopyButton textToCopy={r.caminho} />
                   </td>
                 </tr>
