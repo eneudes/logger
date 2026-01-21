@@ -1,14 +1,14 @@
-// Substitua os valores pelas credenciais do seu projeto Firebase
+// Firebase configuration loaded from environment variables
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAYqzhdEYSIRcmk-GVgGo74HfmHJEvcoto",
-  authDomain: "logger-grito-c0517.firebaseapp.com",
-  projectId: "logger-grito-c0517",
-  storageBucket: "logger-grito-c0517.firebasestorage.app",
-  messagingSenderId: "331414921933",
-  appId: "1:331414921933:web:03797a55004c668ab77f84"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Inicializa Firebase
